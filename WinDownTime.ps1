@@ -2,7 +2,7 @@ echo "Starting Script"
 
 
 #Get contents of Servers_Control spreadsheet (on Google Drive) and get the server details
-$shejs = "https://spreadsheets.google.com/feeds/list/1ajcHPKp4R3YZ7GckuO6e9cjj6eqPPaBy_5sRN9wbOQg/od6/public/values?alt=json"
+$shejs = "https://spreadsheets.google.com/feeds/list/1yIQMI8k94GBSX7GAJC6GxDMOMdnpkftM16_r_uRldbQ/od6/public/values?alt=json"
 $sozz = Invoke-WebRequest -Uri $shejs | ConvertFrom-Json
 $dtsers = $sozz.feed.entry | select -expandproperty 'content'
 $outhed = "Name, Day, Time, Update, NagName, Excluded_Ups, SS, Notify, FQDN, Patch_Name"
